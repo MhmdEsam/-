@@ -27,360 +27,690 @@ let track = document.createElement('audio');
 //All songs list
 let All_song = [
    {
-	 name: "سورة الفاتحة",
-	 path: "https://quran.islamway.net/quran3/4873/17440/128/001.mp3",
-	 img: "imgs/الفاتحة.png",
+	 name: "سُورَةُ الفَاتِحَة",
+	 path: "https://server8.mp3quran.net/afs/001.mp3",
+	 img: "imgs/سورة الفاتحة.png",
 	 singer: "1"
    },
    {
-	 name: "سورة البقرة",
-	 path: "https://quran.islamway.net/quran3/4873/17440/128/002.mp3",
-	 img: "imgs/البقرة.png",
+	 name: "سُورَةُ البَقَرَة",
+	 path: "https://server8.mp3quran.net/afs/002.mp3",
+	 img: "imgs/سورة البقرة.png",
 	 singer: "2"
    },
    {
-     name: "سورة الانسان",
-     path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/076.mp3",
-     img: "imgs/الانسان.png",
+     name: "سُورَةُ آل عِمرَان",
+     path: "https://server8.mp3quran.net/afs/003.mp3",
+     img: "imgs/سورة ال عمران.png",
      singer: "3"
    },
    {
-     name: "سورة الجن",
-     path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/072.mp3",
-     img: "imgs/الجن.png",
+     name: "سُورَةُ النِّسَاء",
+     path: "https://server8.mp3quran.net/afs/004.mp3",
+     img: "imgs/سورة النساء.png",
      singer: "4"
    },
    {
-     name: "سورة التغابن",
-     path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/064.mp3",
-     img: "imgs/التغابن.png",
+     name: "سُورَةُ المَائدة",
+     path: "https://server8.mp3quran.net/afs/005.mp3",
+     img: "imgs/سورة المائدة.png",
      singer: "5"
    },
    {
-	name: "سورة الرعد",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/013.mp3",
-	img: "imgs/الرعد.png",
+	name: "سُورَةُ الأنعَام",
+	path: "https://server8.mp3quran.net/afs/006.mp3",
+	img: "imgs/سورة الانعام.png",
 	singer: "6"
   },
   {
-	name: "سورة الاسراء",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/017.mp3",
-	img: "imgs/الاسراء.png",
+	name: "سُورَةُ الأعرَاف",
+	path: "https://server8.mp3quran.net/afs/007.mp3",
+	img: "imgs/سورة الاعراف.png",
 	singer: "7"
   },
   {
-	name: "سورة الشعراء",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/026.mp3",
-	img: "imgs/الشعراء.png",
+	name: "سُورَةُ الأنفَال",
+	path: "https://server8.mp3quran.net/afs/008.mp3",
+	img: "imgs/سورة الانفال.png",
 	singer: "8"
   },
   {
-	name: "سورة لقمان",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/031.mp3",
-	img: "imgs/لقمان.png",
+	name: "سُورَةُ التوبَة",
+	path: "https://server8.mp3quran.net/afs/009.mp3",
+	img: "imgs/سورة التوبة.png",
 	singer: "9"
   },
   {
-	name: "سورة السجدة",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/032.mp3",
-	img: "imgs/السجدة.png",
+	name: "سُورَةُ يُونس",
+	path: "https://server8.mp3quran.net/afs/010.mp3",
+	img: "imgs/سورة يونس.png",
 	singer: "10"
   },
   {
-	name: "سورة فصلت",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/041.mp3",
-	img: "imgs/فصلت.png",
+	name: "سُورَةُ هُود",
+	path: "https://server8.mp3quran.net/afs/011.mp3",
+	img: "imgs/سورة هود.png",
 	singer: "11"
   },
   {
-	name: "سورة الشوري",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/042.mp3",
-	img: "imgs/الشوري.png",
+	name: "سُورَةُ يُوسُف",
+	path: "https://server8.mp3quran.net/afs/012.mp3",
+	img: "imgs/سورة يوسف.png",
 	singer: "12"
   },
   {
-	name: "سورة الدخان",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/044.mp3",
-	img: "imgs/الدخان.png",
+	name: "سُورَةُ الرَّعْد",
+	path: "https://server8.mp3quran.net/afs/013.mp3",
+	img: "imgs/سورة الرعد.png",
 	singer: "13"
   },
   {
-	name: "سورة ق",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/050.mp3",
-	img: "imgs/ق.png",
+	name: "سُورَةُ إبراهِيم",
+	path: "https://server8.mp3quran.net/afs/014.mp3",
+	img: "imgs/سورة ابراهيم.png",
 	singer: "14"
   },
   {
-	name: "سورة النجم",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/053.mp3",
-	img: "imgs/النجم.png",
+	name: "سُورَةُ الحِجْر",
+	path: "https://server8.mp3quran.net/afs/015.mp3",
+	img: "imgs/سورة الحجر.png",
 	singer: "15"
   },
   {
-	name: "سورة القمر",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/054.mp3",
-	img: "imgs/القمر.png",
+	name: "سُورَةُ النَّحْل",
+	path: "https://server8.mp3quran.net/afs/016.mp3",
+	img: "imgs/سورة النحل.png",
 	singer: "16"
   },
   {
-	name: "اسورة الغاشية",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/088ء.mp3",
-	img: "imgs/الغاشية.png",
+	name: "سُورَةُ الإسْرَاء",
+	path: "https://server8.mp3quran.net/afs/017.mp3",
+	img: "imgs/سورة الاسراء.png",
 	singer: "17"
   },
   {
-	name: "سورة الكهف",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/018.mp3",
-	img: "imgs/الكهف.png",
+	name: "سُورَةُ الكهْف",
+	path: "https://server8.mp3quran.net/afs/018.mp3",
+	img: "imgs/سورة الكهف.png",
 	singer: "18"
   },
   {
-	name: "سورة المعارج",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/070.mp3",
-	img: "imgs/المعارج.png",
+	name: "سُورَةُ مَريَم",
+	path: "https://server8.mp3quran.net/afs/019.mp3",
+	img: "imgs/سورة مريم.png",
 	singer: "19"
   },
   {
-	name: "سورة القلم",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/068.mp3",
-	img: "imgs/القلم.png",
+	name: "سُورَةُ طه",
+	path: "https://server8.mp3quran.net/afs/020.mp3",
+	img: "imgs/سورة طه.png",
 	singer: "20"
   },
   {
-	name: "سورة الملك",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/067.mp3",
-	img: "imgs/الملك.png",
+	name: "سُورَةُ الأنبيَاء",
+	path: "https://server8.mp3quran.net/afs/021.mp3",
+	img: "imgs/سورة الانبياء.png",
 	singer: "21"
   },
-  {
-	name: "سورة التحريم",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/066.mp3",
-	img: "imgs/التحريم.png",
+    {
+	name: "سُورَةُ الحَج",
+	path: "https://server8.mp3quran.net/afs/022.mp3",
+	img: "imgs/سورة الحج.png",
 	singer: "22"
   },
   {
-	name: "سورة الحشر",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/059.mp3",
-	img: "imgs/الحشر.png",
+	name: "سُورَةُ المُؤمنون",
+	path: "https://server8.mp3quran.net/afs/023.mp3",
+	img: "imgs/سورة المؤمنون.png",
 	singer: "23"
   },
   {
-	name: "سورة الواقعة",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/056.mp3",
-	img: "imgs/الواقعة.png",
+	name: "سُورَةُ النُّور",
+	path: "https://server8.mp3quran.net/afs/024.mp3",
+	img: "imgs/سورة النور.png",
 	singer: "24"
   },
-  {
-	name: "سورة الرحمن",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/055.mp3",
-	img: "imgs/الرحمن.png",
+    {
+	name: "سُورَةُ الفُرْقان",
+	path: "https://server8.mp3quran.net/afs/025.mp3",
+	img: "imgs/سورة الفرقان.png",
 	singer: "25"
   },
   {
-	name: "سورة البروج",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/085.mp3",
-	img: "imgs/البروج.png",
+	name: "سُورَةُ الشُّعَرَاء",
+	path: "https://server8.mp3quran.net/afs/026.mp3",
+	img: "imgs/سورة الشعراء.png",
 	singer: "26"
   },
   {
-	name: "سورة النازعات",
-	path: "https://server14.mp3quran.net/islam/Rewayat-Hafs-A-n-Assem/079.mp3",
-	img: "imgs/النازعات.png",
+	name: "سُورَةُ النَّمْل",
+	path: "https://server8.mp3quran.net/afs/027.mp3",
+	img: "imgs/سورة النمل.png",
 	singer: "27"
   },
   {
-	name: "سورة يوسف",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/012.mp3",
-	img: "imgs/يوسف.png",
+	name: "سُورَةُ القَصَص",
+	path: "https://server8.mp3quran.net/afs/028.mp3",
+	img: "imgs/سورة القصص.png",
 	singer: "28"
   },
-  {
-	name: "سورة ابراهيم",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/014.mp3",
-	img: "imgs/ابراهيم.png",
+    {
+	name: "سُورَةُ العَنكبوت",
+	path: "https://server8.mp3quran.net/afs/029.mp3",
+	img: "imgs/سورة العنكبوت.png",
 	singer: "29"
   },
-  {
-	name: "سورة الحجر",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/015.mp3",
-	img: "imgs/الحجر.png",
+    {
+	name: "سُورَةُ الرُّوم",
+	path: "https://server8.mp3quran.net/afs/030.mp3",
+	img: "imgs/سورة الروم.png",
 	singer: "30"
   },
-  {
-	name: "سورة مريم",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/019.mp3",
-	img: "imgs/مريم.png",
+    {
+	name: "سُورَةُ لقمَان",
+	path: "https://server8.mp3quran.net/afs/031.mp3",
+	img: "imgs/سورة لقمان.png",
 	singer: "31"
   },
   {
-	name: "سورة النمل",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/027.mp3",
-	img: "imgs/النمل.png",
+	name: "سُورَةُ السَّجدَة",
+	path: "https://server8.mp3quran.net/afs/032.mp3",
+	img: "imgs/سورة السجدة.png",
 	singer: "32"
   },
   {
-	name: "سورة سبا",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/034.mp3",
-	img: "imgs/سبا.png",
+	name: "سُورَةُ الأحزَاب",
+	path: "https://server8.mp3quran.net/afs/033.mp3",
+	img: "imgs/سورة الاحزاب.png",
 	singer: "33"
   },
   {
-	name: "سورة فاطر",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/035.mp3",
-	img: "imgs/فاطر.png",
+	name: "سُورَةُ سَبَأ",
+	path: "https://server8.mp3quran.net/afs/034.mp3",
+	img: "imgs/سورة سبا.png",
 	singer: "34"
   },
   {
-	name: "سورة يس",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/036.mp3",
-	img: "imgs/يس.png",
+	name: "سُورَةُ فَاطِر",
+	path: "https://server8.mp3quran.net/afs/035.mp3",
+	img: "imgs/سورة فاطر.png",
 	singer: "35"
   },
   {
-	name: "سورة الاحقاف",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/046.mp3",
-	img: "imgs/الاحقاف.png",
+	name: "سُورَةُ يس",
+	path: "https://server8.mp3quran.net/afs/036.mp3",
+	img: "imgs/سورة يس.png",
 	singer: "36"
   },
   {
-	name: "سورة الذاريات",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/051.mp3",
-	img: "imgs/الذاريات.png",
+	name: "سُورَةُ الصَّافات",
+	path: "https://server8.mp3quran.net/afs/037.mp3",
+	img: "imgs/سورة الصافات.png",
 	singer: "37"
   },
   {
-	name: "سورة المجادلة",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/058.mp3",
-	img: "imgs/المجادلة.png",
+	name: "سُورَةُ ص",
+	path: "https://server8.mp3quran.net/afs/038.mp3",
+	img: "imgs/سورة ص.png",
 	singer: "38"
   },
   {
-	name: "سورة الصف",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/061.mp3",
-	img: "imgs/الصف.png",
+	name: "سُورَةُ الزُّمَر",
+	path: "https://server8.mp3quran.net/afs/039.mp3",
+	img: "imgs/سورة الزمر.png",
 	singer: "39"
   },
   {
-	name: "سورة المنافقون",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/063.mp3",
-	img: "imgs/المنافقون.png",
+	name: "سُورَةُ غَافِر",
+	path: "https://server8.mp3quran.net/afs/040.mp3",
+	img: "imgs/سورة غافر.png",
 	singer: "40"
   },
   {
-	name: "سورة المزمل",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/073.mp3",
-	img: "imgs/المزمل.png",
+	name: "سُورَةُ فُصِّلَتْ",
+	path: "https://server8.mp3quran.net/afs/041.mp3",
+	img: "imgs/سورة فصلت.png",
 	singer: "41"
   },
   {
-	name: "سورة القيامة",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/075.mp3",
-	img: "imgs/القيامة.png",
+	name: "سُورَةُ الشُّورَى",
+	path: "https://server8.mp3quran.net/afs/042.mp3",
+	img: "imgs/سورة الشوري.png",
 	singer: "42"
   },
   {
-	name: "سورة النبا",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/078.mp3",
-	img: "imgs/النبا.png",
+	name: "سُورَةُ الزُّخْرُف",
+	path: "https://server8.mp3quran.net/afs/043.mp3",
+	img: "imgs/سورة الزخرف.png",
 	singer: "43"
   },
   {
-	name: "سورة عبس",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/080.mp3",
-	img: "imgs/عبس.png",
+	name: "سُورَةُ الدُّخان",
+	path: "https://server8.mp3quran.net/afs/044.mp3",
+	img: "imgs/سورة الدخان.png",
 	singer: "44"
   },
   {
-	name: "سورة التكوير",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/081.mp3",
-	img: "imgs/التكوير.png",
+	name: "سُورَةُ الجاثِية",
+	path: "https://server8.mp3quran.net/afs/045.mp3",
+	img: "imgs/سورة الجاثية.png",
 	singer: "45"
   },
   {
-	name: "سورة الانفطار",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/082.mp3",
-	img: "imgs/الانفطار.png",
+	name: "سُورَةُ الأحقاف",
+	path: "https://server8.mp3quran.net/afs/046.mp3",
+	img: "imgs/سورة الاحقاف.png",
 	singer: "46"
   },
   {
-	name: "سورة المطففين",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/083.mp3",
-	img: "imgs/المطففين.png",
+	name: "سُورَةُ مُحَمّد",
+	path: "https://server8.mp3quran.net/afs/047.mp3",
+	img: "imgs/سورة محمد.png",
 	singer: "47"
   },
-  {
-	name: "سورة الانشقاق",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/084.mp3",
-	img: "imgs/الانشقاق.png",
+    {
+	name: "سُورَةُ الفَتْح",
+	path: "https://server8.mp3quran.net/afs/048.mp3",
+	img: "imgs/سورة الفتح.png",
 	singer: "48"
   },
   {
-	name: "سورة الطارق",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/086.mp3",
-	img: "imgs/الطارق.png",
+	name: "سُورَةُ الحُجُرات",
+	path: "https://server8.mp3quran.net/afs/049.mp3",
+	img: "imgs/سورة الحجرات.png",
 	singer: "49"
   },
   {
-	name: "سورة الاعلي",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/087.mp3",
-	img: "imgs/الاعلي.png",
+	name: "سُورَةُ ق",
+	path: "https://server8.mp3quran.net/afs/050.mp3",
+	img: "imgs/سورة ق.png",
 	singer: "50"
   },
   {
-	name: "سورة الفجر",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/089.mp3",
-	img: "imgs/الفجر.png",
+	name: "سُورَةُ الذَّاريَات",
+	path: "https://server8.mp3quran.net/afs/051.mp3",
+	img: "imgs/سورة الذاريات.png",
 	singer: "51"
   },
   {
-	name: "سورة البلد",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/090.mp3",
-	img: "imgs/البلد.png",
+	name: "سُورَةُ الطُّور	",
+	path: "https://server8.mp3quran.net/afs/052.mp3",
+	img: "imgs/سورة الطور.png",
 	singer: "52"
   },
   {
-	name: "سورة الشمس",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/091.mp3",
-	img: "imgs/الشمس.png",
+	name: "سُورَةُ النَّجْم",
+	path: "https://server8.mp3quran.net/afs/053.mp3",
+	img: "imgs/سورة النجم.png",
 	singer: "53"
   },
   {
-	name: "سورة الليل",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/092.mp3",
-	img: "imgs/الليل.png",
+	name: "سُورَةُ القَمَر",
+	path: "https://server8.mp3quran.net/afs/054.mp3",
+	img: "imgs/سورة القمر.png",
 	singer: "54"
   },
   {
-	name: "سورة الضحي",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/093.mp3",
-	img: "imgs/الضحي.png",
+	name: "سُورَةُ الرَّحمن",
+	path: "https://server8.mp3quran.net/afs/055.mp3",
+	img: "imgs/سورة الرحمن.png",
 	singer: "55"
   },
   {
-	name: "سورة الشرح",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/094.mp3",
-	img: "imgs/الشرح.png",
+	name: "سُورَةُ الواقِعَة",
+	path: "https://server8.mp3quran.net/afs/056.mp3",
+	img: "imgs/سورة الواقعة.png",
 	singer: "56"
   },
   {
-	name: "سورة التين",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/095.mp3",
-	img: "imgs/التين.png",
+	name: "سُورَةُ الحَديد",
+	path: "https://server8.mp3quran.net/afs/057.mp3",
+	img: "imgs/سورة الحديد.png",
 	singer: "57"
   },
   {
-	name: "سورة العلق",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/096.mp3",
-	img: "imgs/العلق.png",
+	name: "سُورَةُ المُجادَلة",
+	path: "https://server8.mp3quran.net/afs/058.mp3",
+	img: "imgs/سورة المجادلة.png",
 	singer: "58"
   },
   {
-	name: "سورة البينة",
-	path: "https://quran.islamway.net/quran3/4873/17440/128/098.mp3",
-	img: "imgs/البينة.png",
+	name: "سُورَةُ الحَشْر",
+	path: "https://server8.mp3quran.net/afs/059.mp3",
+	img: "imgs/سورة الحشر.png",
 	singer: "59"
   },
-
+  {
+	name: "سُورَةُ المُمتَحَنة",
+	path: "https://server8.mp3quran.net/afs/060.mp3",
+	img: "imgs/سورة الممتحنة.png",
+	singer: "60"
+  },
+  {
+	name: "سُورَةُ الصَّف",
+	path: "https://server8.mp3quran.net/afs/061.mp3",
+	img: "imgs/سورة الصف.png",
+	singer: "61"
+  },
+  {
+	name: "سُورَةُ الجُّمُعة",
+	path: "https://server8.mp3quran.net/afs/062.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُنافِقُون",
+	path: "https://server8.mp3quran.net/afs/063.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ التَّغابُن",
+	path: "https://server8.mp3quran.net/afs/064.mp3",
+	img: "",
+	singer: ""
+  },
+    {
+	name: "سُورَةُ الطَّلاق",
+	path: "https://server8.mp3quran.net/afs/065.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ التَّحْريم",
+	path: "https://server8.mp3quran.net/afs/066.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُلْك",
+	path: "https://server8.mp3quran.net/afs/067.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ القَلـََم",
+	path: "https://server8.mp3quran.net/afs/068.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الحَاقّـَة",
+	path: "https://server8.mp3quran.net/afs/069.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المَعارِج",
+	path: "https://server8.mp3quran.net/afs/070.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ نُوح",
+	path: "https://server8.mp3quran.net/afs/071.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الجِنّ",
+	path: "https://server8.mp3quran.net/afs/072.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُزَّمّـِل",
+	path: "https://server8.mp3quran.net/afs/073.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُدَّثــِّر",
+	path: "https://server8.mp3quran.net/afs/074.mp3",
+	img: "",
+	singer: ""
+  }, 
+  {
+	name: "سُورَةُ القِيامَة",
+	path: "https://server8.mp3quran.net/afs/075.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الإنسان",
+	path: "https://server8.mp3quran.net/afs/076.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُرسَلات",
+	path: "https://server8.mp3quran.net/afs/077.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ النـَّبأ",
+	path: "https://server8.mp3quran.net/afs/078.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ النـّازِعات",
+	path: "https://server8.mp3quran.net/afs/079.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ عَبَس",
+	path: "https://server8.mp3quran.net/afs/080.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ التـَّكْوير",
+	path: "https://server8.mp3quran.net/afs/081.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الإنفِطار",
+	path: "https://server8.mp3quran.net/afs/082.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المُطـَفِّفين",
+	path: "https://server8.mp3quran.net/afs/083.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الإنشِقاق",
+	path: "https://server8.mp3quran.net/afs/084.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ البُروج",
+	path: "https://server8.mp3quran.net/afs/085.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الطّارق",
+	path: "https://server8.mp3quran.net/afs/086.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الأعلی",
+	path: "https://server8.mp3quran.net/afs/087.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الغاشِيَة",
+	path: "https://server8.mp3quran.net/afs/088.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الفَجْر",
+	path: "https://server8.mp3quran.net/afs/089.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ البَـلـَد",
+	path: "https://server8.mp3quran.net/afs/090.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الشــَّمْس",
+	path: "https://server8.mp3quran.net/afs/091.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ اللـَّيل",
+	path: "https://server8.mp3quran.net/afs/092.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الضُّحی",
+	path: "https://server8.mp3quran.net/afs/093.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الشَّرْح",
+	path: "https://server8.mp3quran.net/afs/094.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ التـِّين",
+	path: "https://server8.mp3quran.net/afs/095.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ العَلـَق",
+	path: "https://server8.mp3quran.net/afs/096.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ القـَدر",
+	path: "https://server8.mp3quran.net/afs/097.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ البَيِّنَة",
+	path: "https://server8.mp3quran.net/afs/098.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الزلزَلة",
+	path: "https://server8.mp3quran.net/afs/099.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ العَادِيات",
+	path: "https://server8.mp3quran.net/afs/100.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ القارِعَة",
+	path: "https://server8.mp3quran.net/afs/101.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ التَكاثـُر",
+	path: "https://server8.mp3quran.net/afs/102.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ العَصْر",
+	path: "https://server8.mp3quran.net/afs/103.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الهُمَزَة",
+	path: "https://server8.mp3quran.net/afs/104.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الفِيل",
+	path: "https://server8.mp3quran.net/afs/105.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ قـُرَيْش",
+	path: "https://server8.mp3quran.net/afs/106.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المَاعُون",
+	path: "https://server8.mp3quran.net/afs/107.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الكَوْثَر",
+	path: "https://server8.mp3quran.net/afs/108.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الكَافِرُون",
+	path: "https://server8.mp3quran.net/afs/109.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ النـَّصر",
+	path: "https://server8.mp3quran.net/afs/110.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ المَسَد",
+	path: "https://server8.mp3quran.net/afs/111.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الإخْلَاص",
+	path: "https://server8.mp3quran.net/afs/112.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ الفَلَق",
+	path: "https://server8.mp3quran.net/afs/113.mp3",
+	img: "",
+	singer: ""
+  },
+  {
+	name: "سُورَةُ النَّاس",
+	path: "https://server8.mp3quran.net/afs/114.mp3",
+	img: "",
+	singer: ""
+  },
+  
 ];
 
 
@@ -412,6 +742,8 @@ function mute_sound(){
 	volume.value = 0;
 	volume_show.innerHTML = 0;
 }
+
+
 
 
 // checking.. the song is playing or not
