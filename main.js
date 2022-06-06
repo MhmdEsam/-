@@ -851,3 +851,4 @@ function range_slider(){
            }
 	    }
      }
+ 
