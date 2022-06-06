@@ -395,7 +395,7 @@ let All_song = [
   {
 	name: "سُورَةُ الجُّمُعة",
 	path: "https://server8.mp3quran.net/afs/062.mp3",
-	img: "",
+	img: "https://media.discordapp.net/attachments/681368572345188424/983302873913892904/images_10.jpeg",
 	singer: "62"
   },
   {
