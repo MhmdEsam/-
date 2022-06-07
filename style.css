@@ -51,8 +51,8 @@ body{
 
 /* song image */
 .left img{
-	height: 300px;
-	width: 80%;
+	height: 200px;
+	width: 90%;
 	border-radius: 15px;
 	object-fit: cover;
 	box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
@@ -299,12 +299,16 @@ input[type="range"]::-webkit-slider-thumb{
 	    width: 60%;
 	}
 	.left img{
-        min-width: 90%;
-        height: 180px;
+        width: 90%;
+        height: 140px;
 	}
 	.main #logo{
-		display: none;
-	}
+		position: absolute;
+		top: 70px;
+		left: 10px;
+		width: 80%;
+		height: 70px;
+}
 	.song_detail{
 		position: absolute;
 		top: 5px;
@@ -332,11 +336,15 @@ input[type="range"]::-webkit-slider-thumb{
 	    width: 80%;
 	}
 	.left img{
-        min-width: 90%;
-        height: 180px;
+        width: 100%;
+        height: 140px;
 	}
 	.main #logo{
-		display: none;
+		position: absolute;
+		top: 70px;
+		left: 10px;
+		width: 80%;
+		height: 70px;
 	}
 	.song_detail{
 		position: absolute;
