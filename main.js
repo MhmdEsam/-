@@ -807,6 +807,12 @@ function previous_song(){
 }
 
 
+const trigger = document.querySelector("menu > .trigger");
+trigger.addEventListener('click', (e) => {
+  e.currentTarget.parentElement.classList.toggle("open");
+});
+
+
 // change volume
 function volume_change(){
 	volume_show.innerHTML = recent_volume.value;
