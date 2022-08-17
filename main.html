@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>القرءان الكريم</title>
+  <link rel="icon" href="imgspng/القرءان الكريم.png" type="image/icon type">
+  <img  src="imgspng/baba.png" alt="Error" width="50" height="50">
+  <h1 id="logo" style="color: wheat ; font-size: 28px;"><li class="fa fa-heart"></li> ارجو ان لا تنسا الدعاء الي ابي وجميع اموات المسلمين بالرحمة فضلا <li class="fa fa-heart"></li></h1>
+  <link rel="canonical" href="###">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="stylee.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="copyright" content="(c) Copyright Creativity">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="375">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="theme-color" content="#36393f">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Creativity">
+  <meta property="og:site_name" content="###">
+  <meta property="og:description" content="Creativity">
+  <meta name="description" content="Creativity">
+  <meta property="og:image" content="image/png" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="###">
+  <meta name="twitter:title" content="Creativity">
+  <meta name="twitter:description" content="Creativity">
+  <meta name="google-site-verification" content="">
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous">
+  <script type="text/javascript">var preload = document.createElement('div'); preload.className = "preloader"; preload.innerHTML = '</div><div class="spinner"></div>'; document.body.appendChild(preload); window.addEventListener('load', function() { preload.className +=  ' fade'; setTimeout(function(){ preload.style.display = 'none'; },600); 
+  })</script>
+  <noscript>
+  <div class="no-js">
+  To view the page please enable javascript in your browser
+  </div></noscript>
+  <div class="main">
+        <!-- show_song_number -->
+        <div class="show_song_no">
+          <p id="present">1</p>
+          <p>/</p>
+          <p id="total">114</p>
+        </div>
+
+
+    <!--- left part --->
+     <div class="left">
+
+      <!--- song img --->
+      <img id="track_image">
+         <div class="volume">
+            <p id="volume_show">50</p>
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+            <input type="range" min="0" max="100" value="50" onchange="volume_change()" id="volume">  
+         </div>
+
+     </div>
+ 
+     <!--- right part --->
+  	 <div class="right">
+       <!--- song title & artist name --->
+       <div class="song_detail">
+           <p id="title">Error</p>
+           <p id="artist">Error</p>
+       </div>
+
+      <!--- middle part --->
+  	 	<div class="middle">
+  	       <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+      	   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+  	       <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+  	   </div>
+
+       <!--- song duration part --->
+        <div class="duration">
+           <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+           <button id="auto" onclick="autoplay_switch()">Auto Play &nbsp;<i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+        </div>
+           
+  	</div>
+
+
+  </div>
+
+  <!--- Add javascript file --->
+  <script src="main.js"></script>
+
+</body>
+</html>
