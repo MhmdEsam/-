@@ -870,7 +870,7 @@
     .pe
     {
       left: center;
-      top: 400px;
+      top: 200px;
         width: 30%;
         padding: 40px 0;
         
@@ -888,7 +888,7 @@
     }
     .p-name
     {
-      font-size: 28px;
+      font-size: 22px;
         margin: 80px;
         text-transform: var(--scrollbar);
       color: white;
@@ -897,7 +897,7 @@
     .pee
     {
       left: center;
-      top: 200px;
+      top: 150px;
         width: 30%;
         padding: 40px 0;
         
@@ -915,7 +915,7 @@
     }
     .p-name
     {
-      font-size: 28px;
+      font-size: 22px;
         margin: 80px;
         text-transform: var(--scrollbar);
       color: white;
@@ -942,7 +942,7 @@
     }
     .p-name
     {
-      font-size: 28px;
+      font-size: 22px;
         margin: 80px;
         text-transform: var(--scrollbar);
       color: white;
