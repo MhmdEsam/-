@@ -848,6 +848,12 @@
     transform: scale(0.9); 
     border: 5px solid black;
     }
+        .p-name
+    {
+        margin: 28px;
+        text-transform: var(--scrollbar);
+      color: white
+    }
     .afs
     {
       left: center;
@@ -866,6 +872,12 @@
     {
     transform: scale(0.9); 
     border: 5px solid black;
+    }
+        .p-name
+    {
+        margin: 28px;
+        text-transform: var(--scrollbar);
+      color: white
     }
     .minshwy
     {
@@ -888,7 +900,7 @@
     }
     .p-name
     {
-        margin: 20px;
+        margin: 28px;
         text-transform: var(--scrollbar);
       color: white
     }
@@ -911,7 +923,12 @@
     transform: scale(0.9); 
     border: 5px solid black;
     }
-
+    .p-name
+    {
+        margin: 28px;
+        text-transform: var(--scrollbar);
+      color: white
+    }
   }
   @media(max-width: 500px){
     .yasser
