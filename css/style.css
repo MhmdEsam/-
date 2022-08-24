@@ -720,7 +720,7 @@
       border-bottom: 4px solid;
       padding-bottom: 10px;
   }
-  .peee
+  .minshwy
   {
     left: center;
     top: 400px;
@@ -731,20 +731,20 @@
   
 
   
-  .peee img
+  .minshwy img
   {
       width:240px;
       height: 240px;
       border-radius: 50%;
   }
-  .peee img:hover
+  .minshwy img:hover
   {
   transform: scale(0.9); 
   border: 5px solid black;
   }
   
   
-  .pee
+  .afs
   {
     left: center;
     top: 400px;
@@ -755,19 +755,19 @@
   
 
   
-  .pee img
+  .afs img
   {
       width:240px;
       height: 240px;
       border-radius: 50%;
   }
-  .pee img:hover
+  .afs img:hover
   {
   transform: scale(0.9); 
   border: 5px solid black;
   }
   
-  .pe
+  .yasser
   {
     left: center;
     top: 400px;
@@ -777,13 +777,13 @@
   }
 
   
-  .pe img
+  .yasser img
   {
       width:240px;
       height: 240px;
       border-radius: 50%;
   }
-  .pe img:hover
+  .yasser img:hover
   {
   transform: scale(0.9); 
   border: 5px solid black;
@@ -801,7 +801,7 @@
 
 
   @media(max-width: 700px){
-    .pe
+    .yasser
     {
       left: center;
       top: 400px;
@@ -809,18 +809,18 @@
         padding: 40px 0;
         
     }
-    .pe img
+    .yasser img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .pe img:hover
+    .yasser img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
     }
-    .pee
+    .afs
     {
       left: center;
       top: 200px;
@@ -828,18 +828,18 @@
         padding: 40px 0;
         
     }
-    .pee img
+    .afs img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .pee img:hover
+    .afs img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
     }
-    .peee
+    .minshwy
     {
       left: center;
       top: 100px;
@@ -847,13 +847,13 @@
         padding: 40px 0;
         
     }
-    .peee img
+    .minshwy img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .peee img:hover
+    .minshwy img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
@@ -867,7 +867,7 @@
 
   }
   @media(max-width: 500px){
-    .pe
+    .yasser
     {
       left: center;
       top: 50px;
@@ -875,13 +875,13 @@
         padding: 40px 0;
         
     }
-    .pe img
+    .yasser img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .pe img:hover
+    .yasser img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
@@ -894,7 +894,7 @@
       color: white;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .pee
+    .afs
     {
       left: center;
       top: 60px;
@@ -902,13 +902,13 @@
         padding: 40px 0;
         
     }
-    .pee img
+    .afs img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .pee img:hover
+    .afs img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
@@ -921,7 +921,7 @@
       color: white;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .peee
+    .minshwy
     {
       left: center;
       top: 70px;
@@ -929,13 +929,13 @@
         padding: 40px 0;
         
     }
-    .peee img
+    .minshwy img
     {
         width:240px;
         height: 240px;
         border-radius: 50%;
     }
-    .peee img:hover
+    .minshwy img:hover
     {
     transform: scale(0.9); 
     border: 5px solid black;
