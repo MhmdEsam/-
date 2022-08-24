@@ -1,1 +1,859 @@
+let previous = document.querySelector('#pre');
+let play = document.querySelector('#play');
+let next = document.querySelector('#next');
+let title = document.querySelector('#title');
+let recent_volume= document.querySelector('#volume');
+let volume_show = document.querySelector('#volume_show');
+let slider = document.querySelector('#duration_slider');
+let show_duration = document.querySelector('#show_duration');
+let track_image = document.querySelector('#track_image');
+let auto_play = document.querySelector('#auto');
+let present = document.querySelector('#present');
+let total = document.querySelector('#total');
+let artist = document.querySelector('#artist');
 
+
+
+let timer;
+let autoplay = 0;
+
+let index_no = 0;
+let Playing_song = false;
+
+//create a audio Element
+let track = document.createElement('audio');
+
+
+//All songs list
+let All_song = [
+   {
+	 name: "سُورَةُ الفَاتِحَة",
+	 path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/001.mp3",
+	 img: "imgspng/1.png",
+	 singer: "صوت الشيخ حسن صالح"
+   },
+   {
+	 name: "سُورَةُ البَقَرَة",
+	 path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/002.mp3",
+	 img: "imgspng/2.png",
+	 singer: "صوت الشيخ حسن صالح"
+   },
+   {
+     name: "سُورَةُ آل عِمرَان",
+     path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/003.mp3",
+	 img: "imgspng/3.png",
+     singer: "صوت الشيخ حسن صالح"
+   },
+   {
+     name: "سُورَةُ النِّسَاء",
+     path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/004.mp3",
+	 img: "imgspng/4.png",
+     singer: "صوت الشيخ حسن صالح"
+   },
+   {
+     name: "سُورَةُ المَائدة",
+     path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/005.mp3",
+	 img: "imgspng/5.png",
+     singer: "صوت الشيخ حسن صالح"
+   },
+   {
+	name: "سُورَةُ الأنعَام",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/006.mp3",
+	img: "imgspng/6.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأعرَاف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/007.mp3",
+	img: "imgspng/7.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأنفَال",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/008.mp3",
+	img: "imgspng/8.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التوبَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/009.mp3",
+	img: "imgspng/9.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ يُونس",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/010.mp3",
+	img: "imgspng/10.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ هُود",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/011.mp3",
+	img: "imgspng/11.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ يُوسُف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/012.mp3",
+	img: "imgspng/12.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الرَّعْد",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/013.mp3",
+	img: "imgspng/13.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ إبراهِيم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/014.mp3",
+	img: "imgspng/14.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الحِجْر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/015.mp3",
+	img: "imgspng/15.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النَّحْل",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/016.mp3",
+	img: "imgspng/16.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الإسْرَاء",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/017.mp3",
+	img: "imgspng/17.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الكهْف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/018.mp3",
+	img: "imgspng/18.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ مَريَم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/019.mp3",
+	img: "imgspng/19.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ طه",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/020.mp3",
+	img: "imgspng/20.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأنبيَاء",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/021.mp3",
+	img: "imgspng/21.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ الحَج",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/022.mp3",
+	img: "imgspng/22.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُؤمنون",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/023.mp3",
+	img: "imgspng/23.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النُّور",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/024.mp3",
+	img: "imgspng/24.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ الفُرْقان",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/025.mp3",
+	img: "imgspng/25.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الشُّعَرَاء",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/026.mp3",
+	img: "imgspng/26.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النَّمْل",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/027.mp3",
+	img: "imgspng/27.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ القَصَص",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/028.mp3",
+	img: "imgspng/28.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ العَنكبوت",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/029.mp3",
+	img: "imgspng/29.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ الرُّوم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/030.mp3",
+	img: "imgspng/30.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ لقمَان",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/031.mp3",
+	img: "imgspng/31.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ السَّجدَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/032.mp3",
+	img: "imgspng/32.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأحزَاب",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/033.mp3",
+	img: "imgspng/33.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ سَبَأ",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/034.mp3",
+	img: "imgspng/34.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ فَاطِر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/035.mp3",
+	img: "imgspng/35.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ يس",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/036.mp3",
+	img: "imgspng/36.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الصَّافات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/037.mp3",
+	img: "imgspng/37.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ ص",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/038.mp3",
+	img: "imgspng/38.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الزُّمَر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/039.mp3",
+	img: "imgspng/39.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ غَافِر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/040.mp3",
+	img: "imgspng/40.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ فُصِّلَتْ",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/041.mp3",
+	img: "imgspng/41.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الشُّورَى",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/042.mp3",
+	img: "imgspng/42.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الزُّخْرُف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/043.mp3",
+	img: "imgspng/43.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الدُّخان",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/044.mp3",
+	img: "imgspng/44.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الجاثِية",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/045.mp3",
+	img: "imgspng/45.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأحقاف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/046.mp3",
+	img: "imgspng/46.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ مُحَمّد",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/047.mp3",
+	img: "imgspng/47.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ الفَتْح",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/048.mp3",
+	img: "imgspng/48.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الحُجُرات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/049.mp3",
+	img: "imgspng/49.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ ق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/050.mp3",
+	img: "imgspng/50.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الذَّاريَات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/051.mp3",
+	img: "imgspng/51.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الطُّور	",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/052.mp3",
+	img: "imgspng/52.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النَّجْم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/053.mp3",
+	img: "imgspng/53.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ القَمَر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/054.mp3",
+	img: "imgspng/54.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الرَّحمن",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/055.mp3",
+	img: "imgspng/55.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الواقِعَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/056.mp3",
+	img: "imgspng/56.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الحَديد",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/057.mp3",
+	img: "imgspng/57.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُجادَلة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/058.mp3",
+	img: "imgspng/58.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الحَشْر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/059.mp3",
+	img: "imgspng/59.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُمتَحَنة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/060.mp3",
+	img: "imgspng/60.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الصَّف",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/061.mp3",
+	img: "imgspng/61.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الجُّمُعة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/062.mp3",
+	img: "imgspng/62.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُنافِقُون",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/063.mp3",
+	img: "imgspng/63.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التَّغابُن",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/064.mp3",
+	img: "imgspng/64.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+    {
+	name: "سُورَةُ الطَّلاق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/065.mp3",
+	img: "imgspng/65.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التَّحْريم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/066.mp3",
+	img: "imgspng/66.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُلْك",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/067.mp3",
+	img: "imgspng/67.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ القَلـََم",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/068.mp3",
+	img: "imgspng/68.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الحَاقّـَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/069.mp3",
+	img: "imgspng/69.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المَعارِج",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/070.mp3",
+	img: "imgspng/70.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ نُوح",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/071.mp3",
+	img: "imgspng/71.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الجِنّ",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/072.mp3",
+	img: "imgspng/72.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُزَّمّـِل",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/073.mp3",
+	img: "imgspng/73.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُدَّثــِّر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/074.mp3",
+	img: "imgspng/74.png",
+	singer: "صوت الشيخ حسن صالح"
+  }, 
+  {
+	name: "سُورَةُ القِيامَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/075.mp3",
+	img: "imgspng/75.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الإنسان",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/076.mp3",
+	img: "imgspng/76.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُرسَلات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/077.mp3",
+	img: "imgspng/77.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النـَّبأ",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/078.mp3",
+	img: "imgspng/78.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النـّازِعات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/079.mp3",
+	img: "imgspng/79.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ عَبَس",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/080.mp3",
+	img: "imgspng/80.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التـَّكْوير",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/081.mp3",
+	img: "imgspng/81.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الإنفِطار",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/082.mp3",
+	img: "imgspng/82.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المُطـَفِّفين",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/083.mp3",
+	img: "imgspng/83.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الإنشِقاق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/084.mp3",
+	img: "imgspng/84.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ البُروج",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/085.mp3",
+	img: "imgspng/85.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الطّارق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/086.mp3",
+	img: "imgspng/86.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الأعلی",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/087.mp3",
+	img: "imgspng/87.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الغاشِيَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/088.mp3",
+	img: "imgspng/88.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الفَجْر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/089.mp3",
+	img: "imgspng/89.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ البَـلـَد",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/090.mp3",
+	img: "imgspng/90.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الشــَّمْس",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/091.mp3",
+	img: "imgspng/91.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ اللـَّيل",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/092.mp3",
+	img: "imgspng/92.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الضُّحی",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/093.mp3",
+	img: "imgspng/93.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الشَّرْح",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/094.mp3",
+	img: "imgspng/94.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التـِّين",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/095.mp3",
+	img: "imgspng/95.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ العَلـَق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/096.mp3",
+	img: "imgspng/96.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ القـَدر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/097.mp3",
+	img: "imgspng/97.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ البَيِّنَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/098.mp3",
+	img: "imgspng/98.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الزلزَلة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/099.mp3",
+	img: "imgspng/99.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ العَادِيات",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/100.mp3",
+	img: "imgspng/100.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ القارِعَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/101.mp3",
+	img: "imgspng/101.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ التَكاثـُر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/102.mp3",
+	img: "imgspng/102.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ العَصْر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/103.mp3",
+	img: "imgspng/103.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الهُمَزَة",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/104.mp3",
+	img: "imgspng/104.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الفِيل",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/105.mp3",
+	img: "imgspng/105.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ قـُرَيْش",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/106.mp3",
+	img: "imgspng/106.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المَاعُون",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/107.mp3",
+	img: "imgspng/107.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الكَوْثَر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/108.mp3",
+	img: "imgspng/108.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الكَافِرُون",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/109.mp3",
+	img: "imgspng/109.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النـَّصر",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/110.mp3",
+	img: "imgspng/110.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ المَسَد",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/111.mp3",
+	img: "imgspng/111.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الإخْلَاص",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/112.mp3",
+	img: "imgspng/112.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ الفَلَق",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/113.mp3",
+	img: "imgspng/113.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  {
+	name: "سُورَةُ النَّاس",
+	path: "https://server16.mp3quran.net/h_saleh/Rewayat-Hafs-A-n-Assem/114.mp3",
+	img: "imgspng/114.png",
+	singer: "صوت الشيخ حسن صالح"
+  },
+  
+];
+
+
+// All functions
+
+
+// function load the track
+function load_track(index_no){
+	clearInterval(timer);
+	reset_slider();
+
+	track.src = All_song[index_no].path;
+	title.innerHTML = All_song[index_no].name;	
+	track_image.src = All_song[index_no].img;
+    artist.innerHTML = All_song[index_no].singer;
+    track.load();
+
+	timer = setInterval(range_slider ,1000);
+	total.innerHTML = All_song.length;
+	present.innerHTML = index_no + 1;
+}
+
+load_track(index_no);
+
+
+//mute sound function
+function mute_sound(){
+	track.volume = 0;
+	volume.value = 0;
+	volume_show.innerHTML = 0;
+}
+
+
+
+
+// checking.. the song is playing or not
+ function justplay(){
+ 	if(Playing_song==false){
+ 		playsong();
+
+ 	}else{
+ 		pausesong();
+ 	}
+ }
+
+
+// reset song slider
+ function reset_slider(){
+ 	slider.value = 0;
+ }
+
+// play song
+function playsong(){
+  track.play();
+  Playing_song = true;
+  play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+}
+
+//pause song
+function pausesong(){
+	track.pause();
+	Playing_song = false;
+	play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+}
+
+
+// next song
+function next_song(){
+	if(index_no < All_song.length - 1){
+		index_no += 1;
+		load_track(index_no);
+		playsong();
+	}else{
+		index_no = 0;
+		load_track(index_no);
+		playsong();
+
+	}
+}
+
+
+// previous song
+function previous_song(){
+	if(index_no > 0){
+		index_no -= 1;
+		load_track(index_no);
+		playsong();
+
+	}else{
+		index_no = All_song.length;
+		load_track(index_no);
+		playsong();
+	}
+}
+
+
+const trigger = document.querySelector("menu > .trigger");
+trigger.addEventListener('click', (e) => {
+  e.currentTarget.parentElement.classList.toggle("open");
+});
+
+
+// change volume
+function volume_change(){
+	volume_show.innerHTML = recent_volume.value;
+	track.volume = recent_volume.value / 100;
+}
+
+// change slider position 
+function change_duration(){
+	slider_position = track.duration * (slider.value / 100);
+	track.currentTime = slider_position;
+}
+
+// autoplay function
+function autoplay_switch(){
+	if (autoplay==1){
+       autoplay = 0;
+       auto_play.style.background = "rgba(255,255,255,0.2)";
+	}else{
+       autoplay = 1;
+       auto_play.style.background = "#148F77";
+	}
+}
+
+
+function range_slider(){
+	let position = 0;
+        
+        // update slider position
+		if(!isNaN(track.duration)){
+		   position = track.currentTime * (100 / track.duration);
+		   slider.value =  position;
+	      }
+
+       
+       // function will run when the song is over
+       if(track.ended){
+       	 play.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+           if(autoplay==1){
+		       index_no += 1;
+		       load_track(index_no);
+		       playsong();
+           }
+	    }
+     }
